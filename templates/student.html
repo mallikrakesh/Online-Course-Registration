@@ -1,0 +1,18 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+{% include 'login-student_navbar.html' %}
+    <style>body{
+        background-color: lightblue;
+    }</style>
+    <br>
+    <br>
+    <table align="center">
+    <tr>
+        <th>Welcome</th>
+    </tr>
+    <tr>
+        <th>Mr/Mrs:{{ data.name }}</th>
+    </tr>
+    </table>
+{% endblock %}

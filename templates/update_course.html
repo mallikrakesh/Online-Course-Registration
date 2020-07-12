@@ -1,0 +1,55 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+{% include 'admin_nav.html' %}
+    {% load static %}
+    <style>
+    body{background-color: lightblue}
+    </style>
+    <br>
+
+     <form method="post" action="{% url 'course_update' %}">
+    {% csrf_token %}
+             <div class="col-sm1" style="text-align: center">
+                    <input type="hidden" class="form-control" id="inputPassword" name="u" value="{{ data.cid }}">
+                </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-1 col-form-label" style="margin-left: 400px">Course</label>
+                <div class="col-sm1" style="text-align: center">
+                    <input type="text" class="form-control" id="inputPassword" name="u1" value="{{ data.name }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-1 col-form-label" style="margin-left: 400px">Faculty</label>
+                <div class="col-sm1" style="text-align: center">
+                    <input type="text" class="form-control" id="inputPassword" name="u2" value="{{ data.faculty }}" >
+                </div>
+            </div>
+             <div class="form-group row">
+                <label for="inputPassword" class="col-sm-1 col-form-label" style="margin-left: 400px">Date</label>
+                <div class="col-sm1" style="text-align: center">
+                    <input type="date" class="form-control" id="inputPassword" name="u3" value="{{ data.date }}">
+                </div>
+            </div>
+             <div class="form-group row">
+                <label for="inputPassword" class="col-sm-1 col-form-label" style="margin-left: 400px">Time</label>
+                <div class="col-sm1" style="text-align: center">
+                    <input type="time" class="form-control" id="inputPassword" name='u4' value="{{ data.time }}">
+                </div>
+            </div>
+             <div class="form-group row">
+                <label for="inputPassword" class="col-sm-1 col-form-label" style="margin-left: 400px">Fee</label>
+                <div class="col-sm1" style="text-align: center">
+                    <input type="number" class="form-control" id="inputPassword" name="u5" value="{{ data.fee }}">
+                </div>
+            </div>
+             <div class="form-group row">
+                <label for="inputPassword" class="col-sm-1 col-form-label" style="margin-left: 400px">Duration</label>
+                <div class="col-sm1" style="text-align: center">
+                    <input type="number" class="form-control" id="inputPassword" name="u6" value="{{ data.duration }}">
+                </div>
+            </div>
+              <button type="submit" class="btn btn-danger" style="margin-left: 600px">Update</button>
+
+     </form>
+{% endblock %}

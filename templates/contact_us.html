@@ -1,0 +1,58 @@
+{% extends 'common.html' %}
+{% block common %}
+<br>
+    {% include 'student_navbar.html' %}
+    {% load static %}
+    <style>
+    body{background-color: lightblue}
+    #contact{
+        font-size: 40px;
+        font-family: Calibri;
+        margin-left: 400px;
+        color:black;
+    }
+    #para{
+        font-size: 18px;
+        font-family: "Arial ";
+        margin-left: 400px;
+        color: black;
+    }
+    </style>
+    <br><br>
+    <table>
+    <tr>
+        <th>
+                <img src="{% static 'images/contact.png' %}" width="400" style="margin-left: 150px;background-color: darkcyan;border-radius: 15px">
+
+        </th>
+        <th>
+             <h1 id="contact">Contact Page</h1>
+
+    <p id="para">
+Our Location:<br>
+Python With Naveen<br>
+The Best Software Training Institute in Ameerpet , Hyderabad<br>
+2nd Floor, Sri Sai Arcade,<br>
+Beside Aditya Trade Centre, Ameerpet,<br>
+Hyderabad- Telengana State, PIN-500 038. INDIA<br>
+IND:<br>
++91 9100920092<br>
+, +91 9100940094<br>
+ info@pythonwithnaveen.com<br>
+Business Hours<br>
+
+ Monday – Saturday: 7am to 9pm IST<br>
+
+ Sunday – Closed<br>
+    </p>
+        </th>
+    </tr>
+    </table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+

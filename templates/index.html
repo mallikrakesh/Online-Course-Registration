@@ -1,0 +1,21 @@
+{% extends 'common.html' %}
+{% block common %}
+ {% load static %}
+<style>
+body{background-color:lightblue}
+</style>
+    <table align="center" border="0" width="400">
+    <tr style="text-align: center;padding: 5px;background-color: wheat">
+        <th>
+            <a href="{% url 'admin_page' %}">Admin</a>
+        </th>
+        <th>
+            <a href="{% url 'student_page' %}">Student</a>
+        </th>
+    </tr>
+    </table>
+  <img src="{% static 'images/menuimage.jpg' %}" width="1700">
+
+{% endblock %}
+
+

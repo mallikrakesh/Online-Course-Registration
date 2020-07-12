@@ -1,0 +1,80 @@
+{% extends 'common.html' %}
+{% block common %}
+ {% load static %}
+<style>
+body{background-color:lightblue}
+</style>
+    <br><br>
+    <table  align="center" width="1000"  border="0" style="background-color:cornflowerblue;border-radius:20px" >
+    <tbody>
+    <tr>
+        <td height="100" align="left" valign="top">
+            <img src="{% static 'images/admin.png' %}">
+        </td>
+        <td align="left" valign="top"  style="background-color: maroon"></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top"  ></td>
+        <td align="left" valign="top" width="500" >
+
+
+            <form method="post" action="{% url 'login_admin' %}">
+                {% csrf_token %}
+
+            <table width="450"  border="0" style="background-color: orange;border-radius:10px ">
+                <tbody>
+                <tr >
+                    <td height="50"  align="center" style="background-color: darkslateblue;color: chartreuse;font-size: 30px;font-family:Calibri;border-radius: 10px">Admin Login</td>
+                </tr>
+                <tr><td height="30"></td></tr>
+                <tr>
+                    <td  height=50" align="center">
+                        <input type="text" placeholder="Username" name="a1" required style="border-radius: 5px" >
+
+                    </td>
+
+                </tr>
+                <tr><td height=10"></td></tr>
+                <tr>
+                     <td  height="50" align="center">
+                         <input type="password" placeholder="Password"  name="a2" required style="border-radius: 5px">
+                     </td>
+
+                </tr>
+                <tr>
+                     <td  height="50" align="center">
+                        <button type="submit" class="btn btn-danger">Login</button>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+            </form>
+        </td>
+
+    </tr>
+    </tbody>
+
+    </table>
+    <br><br>
+    {% for msg in messages %}
+    <h5 style="text-align: center;color: rebeccapurple">{{ msg }}</h5>
+    {% endfor %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

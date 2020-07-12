@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+{% include 'login-student_navbar.html' %}
+    {% load static %}
+    <style>body{
+        background-color: lightblue;
+    }</style>
+<br><br>
+    <table class="table table-bordered table-danger" style="width: 800px;" align="center" >
+<tr>
+    <th colspan="9" style="text-align: center;color:chartreuse;font-size: 30px;background-color:rebeccapurple;padding: 10px">View Scheduled Courses</th>
+</tr>
+<tr id="table_row">
+    <td>Id</td>
+    <td>Name</td>
+    <td>Faculty</td>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Fee</td>
+    <td>Duration</td>
+    <td>Enroll</td>
+
+</tr>
+ {% for x in data %}
+ <tr>
+ <th>{{ x.cid }}</th>
+ <th>{{ x.name }}</th>
+ <th>{{ x.faculty }}</th>
+ <th>{{ x.date }}</th>
+ <th>{{ x.time }}</th>
+ <th>{{ x.fee }}</th>
+ <th>{{ x.duration }}</th>
+ <th>
+     <a href="#">yes</a>
+ </th>
+
+ {% endfor %}
+
+
+</table>
+{% endblock %}

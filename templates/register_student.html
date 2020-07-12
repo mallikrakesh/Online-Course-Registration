@@ -1,0 +1,72 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+    {% include 'student_navbar.html' %}
+    {% load static %}
+<style>body{background-color:lightblue}
+#st-titls
+{
+    text-align: center;
+    font-family: "Agency FB";
+    font-size: 30px;
+}
+</style>
+    <br><br>
+    <div class="row">
+    <div class="col-md-6">
+       <img src="{% static 'images/register.jpg' %}" style="margin-left: 150px;margin-top: 50px;background-color: cornflowerblue " width="500" height="300">
+    </div>
+    <div class="clm-md-6">
+        <br>
+        <br>
+        <form method="post" action="{% url 'student_register' %}">
+            {% csrf_token %}
+       <table style="background-color: wheat;width: 600px;height: 300px">
+    <tbody >
+    <tr>
+        <th id="st-titls" colspan="3">Student Register</th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>
+             {{ data.name }}
+        </th>
+        <th>{{ data.name.errors }}</th>
+    </tr>
+     <tr>
+        <th>Contact No</th>
+        <th>
+        {{ data.contact }}
+        </th>
+        <th>{{ data.contact.errors }}</th>
+    </tr>
+     <tr>
+        <th>Email Id</th>
+        <th>
+           {{ data.email }}
+        </th>
+        <th>{{ data.email.errors }}</th>
+
+    </tr>
+     <tr>
+        <th>Password</th>
+        <th>
+          {{ data.password }}
+        </th>
+        <th>{{ data.password.errors }}</th>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+            <button type="submit" class="btn btn-danger" style="margin-left: 200px" >Register</button>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+        </form>
+    </div>
+    </div>
+      {% for msg in messages %}
+    <h3 style="text-align: center;font-family: Arial;color: darkorange">{{ msg }}</h3>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+    {% include 'admin_nav.html' %}
+    {% load static %}
+<style>
+body{
+    background-color: lightblue;
+    }
+#table_row{
+    background-color: maroon;
+    color: wheat;
+    font-family: "Arial Black";
+}
+</style>
+    <br><br>
+ <table class="table table-bordered table-danger" style="width: 800px;" align="center" >
+<tr>
+    <th colspan="9" style="text-align: center;color:chartreuse;font-size: 30px;background-color:rebeccapurple;padding: 10px">View Scheduled Courses</th>
+</tr>
+<tr id="table_row">
+    <td>Id</td>
+    <td>Name</td>
+    <td>Faculty</td>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Fee</td>
+    <td>Duration</td>
+    <td>Update</td>
+    <td>Delete</td>
+</tr>
+ {% for x in data %}
+ <tr>
+ <th>{{ x.cid }}</th>
+ <th>{{ x.name }}</th>
+ <th>{{ x.faculty }}</th>
+ <th>{{ x.date }}</th>
+ <th>{{ x.time }}</th>
+ <th>{{ x.fee }}</th>
+ <th>{{ x.duration }}</th>
+ <th>
+     <a href="{% url 'update_course' %}?cid={{ x.cid }}">Update</a>
+ </th>
+  <th>
+      <a href="{% url 'delete_course' %}?cid={{ x.cid }}">
+          <img src="{% static 'images/trash.png' %}" width='30' height='30'>
+      </a>
+     </th>
+ </tr>
+ {% endfor %}
+
+
+</table>
+    <br>
+     {% for msg in messages %}
+    <h3 style="text-align: center;font-family: Arial;color: darkorange">{{ msg }}</h3>
+    {% endfor %}
+
+{% endblock %}

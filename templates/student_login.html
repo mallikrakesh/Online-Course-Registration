@@ -1,0 +1,17 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+    {% include 'student_navbar.html' %}
+    {% load static %}
+<style>body{background-color: lightblue}</style>
+    <table >
+    <tbody>
+    <tr>
+        <th>
+            <img src="{% static 'images/student-home.png' %}"  height="400" style="background-color:lightblue" >
+        </th>
+        <td>Available Courses</td>
+    </tr>
+    </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'common.html' %}
+{% block common %}
+    <br>
+{% include 'admin_nav.html' %}
+    {% load static %}
+<style>body{background-color: lightblue}
+#title-a{
+    text-align: center;
+    background-color: blueviolet;
+    color: chartreuse;
+    font-family: "Agency FB";
+    font-size: 30px;
+    padding: 10px;
+}
+</style>
+    <br>
+     <form method="post" action="{% url 'add_course' %}">
+    {% csrf_token %}
+
+          <table align="center" class="table table-bordered table-danger" style="width: 600px" >
+              <tr>
+                  <th colspan="4" id="title-a">Schedule a New Course</th>
+              </tr>
+              <tr>
+                  <td>{{ data.name.label }}</td>
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.name.errors }}</td>
+              </tr>
+               <tr>
+                  <td>{{ data.faculty.label }}</td>
+                  <td>{{ data.faculty }}</td>
+                  <td>{{ data.faculty.errors }}</td>
+              </tr>
+               <tr>
+                  <td>{{ data.date.label }}</td>
+                  <td>{{ data.date }}</td>
+                  <td>{{ data.date.errors }}</td>
+              </tr>
+               <tr>
+                  <td>{{ data.time.label }}</td>
+                  <td>{{ data.time }}</td>
+                  <td>{{ data.time.errors }}</td>
+              </tr>
+               <tr>
+                  <td>{{ data.fee.label }}</td>
+                  <td>{{ data.fee }}</td>
+                  <td>{{ data.fee.errors }}</td>
+              </tr>
+               <tr>
+                  <td>{{ data.duration.label }}</td>
+                  <td>{{ data.duration }}</td>
+                  <td>{{ data.duration.errors }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: center" colspan="4">
+                      <button type="submit" class="btn btn-danger">Register</button>
+                  </td>
+              </tr>
+          </table>
+</form>
+    {% for msg in messages %}
+    <h3 style="text-align: center;font-family: Arial;color: darkorange">{{ msg }}</h3>
+    {% endfor %}
+ <br>
+ <br>
+ <br>
+ <br>
+{% endblock %}
