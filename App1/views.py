@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from App.forms import CourseForm,StudentForm
-from App.models import CourseModel,StudentModel,EnrollModel
+from App1.forms import CourseForm,StudentForm
+from App1.models import CourseModel,StudentModel,EnrollModel
 
 # Create your views here.
 def showIndex(request):
